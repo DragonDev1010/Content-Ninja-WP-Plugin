@@ -40,3 +40,30 @@ function custom_block_register_block() {
   ));
 }
 add_action('init', 'custom_block_register_block');
+
+function add_content_guardian_menu_item ($wp_admin_bar) {
+  $args = array (
+    'id'        => 'content_guardian',
+    'title'     => 'Content Guardian',
+    'href'      => 'http://example.com/',
+    // 'parent'    => 'new-content'
+  );
+
+  $wp_admin_bar->add_node( $args );
+}
+
+add_action('admin_bar_menu', 'add_content_guardian_menu_item');
+
+function add_content_guardian_sub_menu_item ($wp_admin_bar) {
+  $args = array (
+    'id'        => 'check_content',
+    'title'     => 'Check Content',
+    'href'      => 'http://example.com/',
+    'parent'    => 'content_guardian'
+  );
+
+  $wp_admin_bar->add_node( $args );
+}
+
+add_action('admin_bar_menu', 'add_content_guardian_sub_menu_item', 20);
+// add_action('wp_before_admin_bar_render', 'add_content_guardian_sub_menu_item');

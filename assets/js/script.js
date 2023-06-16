@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Event handler for the "Check Content" button click
-  // var admin_menu_bar_check_content_btn = document.getElementById("content-guardian-admin-menu-bar-check-content-btn")
   var admin_menu_bar_check_content_btn = document.getElementById("wp-admin-bar-content-guardian-dropdown")
   admin_menu_bar_check_content_btn.addEventListener('click', function() {
     // Make a request to the WordPress REST API to get the post content
-    fetch('/dino/wp-json/wp/v2/posts/30')
+    var postId = contentGuardianScriptData.postId
+    fetch('/dino/wp-json/wp/v2/posts/' + postId)
       .then(response => response.json())
       .then(data => {
         if(data) {
           const postContent = data.content.rendered;
+          console.log(postContent)
           callApi(postContent)
         } else {
           console.error('Post not found.');

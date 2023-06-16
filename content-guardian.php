@@ -13,6 +13,10 @@ add_action('admin_enqueue_scripts', 'content_guardian_enqueue_styles');
 
 function content_guardian_enqueue_scripts() {
   wp_enqueue_script('content-guardian-script', plugin_dir_url(__FILE__) . 'assets/js/script.js', array(), '1.0', true);
+  $post_id = get_the_ID();
+  wp_localize_script('content-guardian-script', 'contentGuardianScriptData', array(
+    'postId' => $post_id
+  ));
 }
 add_action('wp_enqueue_scripts', 'content_guardian_enqueue_scripts');
 add_action('admin_enqueue_scripts', 'content_guardian_enqueue_scripts');

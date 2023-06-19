@@ -17,7 +17,6 @@ require_once __DIR__.'/Includes/add_sub_menu.php';
 require_once __DIR__.'/Includes/enqueue_styles.php';
 require_once __DIR__.'/Includes/enqueue_scripts.php';
 
-
 add_action('admin_enqueue_scripts', 'enqueue_styles');
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

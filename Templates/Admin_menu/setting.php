@@ -1,7 +1,7 @@
 <?php
     function content_guardian_render_settings() {
         // Retrieve the saved post type options from wp_options
-        $saved_post_types = get_option('my_plugin_post_types', array());
+        $saved_post_types = get_option('selected_post_types', array());
 
         // Handle form submission
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,7 +9,7 @@
             $checked_post_types = isset($_POST['post_types']) ? $_POST['post_types'] : array();
 
             // Save the checked post types to wp_options
-            update_option('my_plugin_post_types', $checked_post_types);
+            update_option('selected_post_types', $checked_post_types);
 
             echo 'Settings saved successfully!';
         }
@@ -19,7 +19,7 @@
     <div class="wrap">
         <h1>Content Guardian - Settings</h1>
         <form method="post" action="">
-            <?php wp_nonce_field('my_plugin_post_types_nonce', 'my_plugin_post_types_nonce'); ?>
+            <?php wp_nonce_field('selected_post_types_nonce', 'selected_post_types_nonce'); ?>
             <h2>Select post types:</h2>
             <?php foreach ($post_types as $post_type) : ?>
                 <label>

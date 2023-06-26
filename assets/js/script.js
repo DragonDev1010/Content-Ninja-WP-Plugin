@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Event handler for the "Check Content" button click
-  var admin_menu_bar_check_content_btn = document.getElementById("wp-admin-bar-content-guardian-dropdown")
+  var admin_menu_bar_check_content_btn = document.getElementById("content-guardian-admin-menu-bar-check-content-btn")
   admin_menu_bar_check_content_btn.addEventListener('click', function() {
     // Make a request to the WordPress REST API to get the post content
     var postId = contentGuardianScriptData.postId

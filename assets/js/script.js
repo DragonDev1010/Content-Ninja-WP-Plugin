@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
   admin_menu_bar_check_content_btn.addEventListener('click', function() {
     // Make a request to the WordPress REST API to get the post content
     var postId = contentGuardianScriptData.postId
-    fetch('/dino/wp-json/wp/v2/posts/' + postId)
+    var siteUrl = contentGuardianScriptData.siteUrl
+    fetch(siteUrl + 'wp-json/wp/v2/posts/' + postId)
       .then(response => response.json())
       .then(data => {
         if(data) {

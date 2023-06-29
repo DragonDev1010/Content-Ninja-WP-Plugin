@@ -1,4 +1,7 @@
 <?php
     function content_guardian_render_history() {
-        echo "This is history page";
+        ob_start();
+        include(__DIR__.'/history.html.php');
+        $output = ob_get_clean();
+        echo $output;
     }

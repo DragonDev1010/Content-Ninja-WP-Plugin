@@ -17,6 +17,20 @@ require_once __DIR__.'/Includes/add_sub_menu.php';
 require_once __DIR__.'/Includes/enqueue_styles.php';
 require_once __DIR__.'/Includes/enqueue_scripts.php';
 
+function sidebar_plugin_register() {
+  wp_register_script(
+      'plugin-sidebar-js',
+      plugins_url( '/assets/js/sidebar-plugin/plugin-sidebar.js', __FILE__ ),
+      array( 'wp-plugins', 'wp-edit-post', 'wp-element' )
+  );
+}
+add_action( 'init', 'sidebar_plugin_register' );
+
+function sidebar_plugin_script_enqueue() {
+  wp_enqueue_script( 'plugin-sidebar-js' );
+}
+add_action( 'enqueue_block_editor_assets', 'sidebar_plugin_script_enqueue' );
+
 add_action('admin_enqueue_scripts', 'enqueue_styles');
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts');

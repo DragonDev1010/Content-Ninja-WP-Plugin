@@ -23,11 +23,16 @@ function sidebar_plugin_register() {
       plugins_url( '/assets/js/sidebar-plugin/plugin-sidebar.js', __FILE__ ),
       array( 'wp-plugins', 'wp-edit-post', 'wp-element' )
   );
+  wp_register_style(
+    'plugin-sidebar-css',
+    plugins_url( '/assets/css/sidebar-plugin/plugin-sidebar.css', __FILE__ )
+  );
 }
 add_action( 'init', 'sidebar_plugin_register' );
 
 function sidebar_plugin_script_enqueue() {
   wp_enqueue_script( 'plugin-sidebar-js' );
+  wp_enqueue_style( 'plugin-sidebar-css' );
 }
 add_action( 'enqueue_block_editor_assets', 'sidebar_plugin_script_enqueue' );
 

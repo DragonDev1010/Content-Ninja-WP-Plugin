@@ -2,6 +2,7 @@
   var registerPlugin = wp.plugins.registerPlugin;
   var PluginSidebar = wp.editPost.PluginSidebar;
   var el = wp.element.createElement;
+  var TextControl = wp.components.TextControl;
 
   registerPlugin( 'content-guardian-plugin-sidebar', {
       icon: 'admin-post',
@@ -13,7 +14,17 @@
                   // icon: 'admin-post',
                   title: 'Content Guardian',
               },
-              'Meta field'
+              el(
+                'div',
+                { className: 'plugin-sidebar-content' },
+                el( TextControl, {
+                    label: 'Meta Block Field',
+                    value: 'Initial value',
+                    onChange: function ( content ) {
+                        console.log( 'content changed to ', content );
+                    },
+                } )
+              )
           );
       },
   } );

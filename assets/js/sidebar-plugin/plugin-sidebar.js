@@ -3,6 +3,9 @@
   var PluginSidebar = wp.editPost.PluginSidebar;
   var el = wp.element.createElement;
   var TabPanel = wp.components.TabPanel
+  var Panel = wp.components.Panel
+  var PanelBody = wp.components.PanelBody
+  var PanelRow = wp.components.PanelRow
   
   var moreIcon = el(
     "div",
@@ -13,7 +16,22 @@
       "X%"
     )
   )
-  
+  var contentGuardianPanel = el(
+    Panel,
+    null,
+    el(
+      PanelBody,
+      {
+        title: "Content Guardian",
+        initialOpen: true
+      },
+      el(
+        PanelRow,
+        null,
+        "My Panel Inputs and Labels"
+      )
+    )
+  )
   var sidebarPanel = el(
     TabPanel,
     {
@@ -33,8 +51,8 @@
       ]
     },
     (function(e){
-      return e.title
-    })
+      return contentGuardianPanel
+      })
   )
 
   registerPlugin( 'content-guardian-plugin-sidebar', {

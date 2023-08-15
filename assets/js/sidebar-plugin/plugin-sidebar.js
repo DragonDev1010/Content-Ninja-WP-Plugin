@@ -2,7 +2,7 @@
   var registerPlugin = wp.plugins.registerPlugin;
   var PluginSidebar = wp.editPost.PluginSidebar;
   var el = wp.element.createElement;
-  var TextControl = wp.components.TextControl;
+  var TabPanel = wp.components.TabPanel
   
   var moreIcon = el(
     "div",
@@ -12,6 +12,29 @@
       null,
       "X%"
     )
+  )
+  
+  var sidebarPanel = el(
+    TabPanel,
+    {
+      className:"rank-math-editor-social",
+      activeClass:"is-active",
+      tabs: [
+        {
+          name: 'post',
+          title: "Post",
+          className: "post"
+        },
+        {
+          name: 'block',
+          title: "Block",
+          className: "block"
+        }
+      ]
+    },
+    (function(e){
+      return e.title
+    })
   )
 
   registerPlugin( 'content-guardian-plugin-sidebar', {
@@ -24,17 +47,7 @@
                   name: 'content-guardian-plugin-sidebar',
                   title: 'Content Guardian',
               },
-              el(
-                'div',
-                { className: 'plugin-sidebar-content' },
-                el( TextControl, {
-                    label: 'Meta Block Field',
-                    value: 'Initial value',
-                    onChange: function ( content ) {
-                        console.log( 'content changed to ', content );
-                    },
-                } )
-              )
+              sidebarPanel
           );
       },
   } );

@@ -18,6 +18,39 @@ require_once __DIR__.'/Includes/enqueue_styles.php';
 require_once __DIR__.'/Includes/enqueue_scripts.php';
 
 function sidebar_plugin_register() {
+
+  wp_register_script(
+      'ai-content-detector-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/ai-content-detector-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'originality-ai-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/originality-ai-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'content-guardian-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/content-guardian-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'copyleaks-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/copyleaks-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'gpt-zero-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/gpt-zero-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'openai-chat-gpt-3.5-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/openai-chat-gpt-3.5-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'openai-chat-gpt-4-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/openai-chat-gpt-4-panel.js', __FILE__ )
+  );
+  wp_register_script(
+      'sapling-panel-js',
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/sapling-panel.js', __FILE__ )
+  );
   wp_register_script(
       'plugin-sidebar-js',
       plugins_url( '/assets/js/sidebar-plugin/plugin-sidebar.js', __FILE__ ),
@@ -31,6 +64,14 @@ function sidebar_plugin_register() {
 add_action( 'init', 'sidebar_plugin_register' );
 
 function sidebar_plugin_script_enqueue() {
+  wp_enqueue_script( 'ai-content-detector-panel-js' );
+  wp_enqueue_script( 'content-guardian-panel-js' );
+  wp_enqueue_script( 'copyleaks-panel-js' );
+  wp_enqueue_script( 'gpt-zero-panel-js' );
+  wp_enqueue_script( 'openai-chat-gpt-3.5-panel-js' );
+  wp_enqueue_script( 'openai-chat-gpt-4-panel-js' );
+  wp_enqueue_script( 'originality-ai-panel-js' );
+  wp_enqueue_script( 'sapling-panel-js' );
   wp_enqueue_script( 'plugin-sidebar-js' );
   wp_enqueue_style( 'plugin-sidebar-css' );
 }
@@ -51,3 +92,8 @@ add_action('admin_menu', 'add_menu');
 
 // Add the submenus
 add_action('admin_menu', 'add_sub_menu');
+
+// function add_font_family() {
+//   wp_enqueue_style('google-roboto-fonts', plugin_dir_url(__FILE__).'/assets/roboto-font-family/Roboto-Black.ttf');
+// }
+// add_action('admin_enqueue_scripts', 'add_font_family');

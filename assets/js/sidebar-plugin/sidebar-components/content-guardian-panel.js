@@ -32,9 +32,37 @@ var contentGuardianPanelRow = el(
       ]
     ),
     el(
-      'p',
-      {className: "primary-btn"},
-      "Total words: 682"
+      'div',
+      {
+        style: {
+          display: "inline-block"
+        }
+      },
+      el(
+        'p',
+        {className: "primary-btn roboto-5-13-17"},
+        "Total words: 682"
+      )
+    ),
+    el(
+      'div',
+      {className: "primary-btn roboto-5-13-17"},
+      [
+        el(
+          'img',
+          {
+            src: '/images/ai-part-icon.png'
+          }
+        ),
+        "AI",
+        el(
+          'img',
+          {
+            src: 'image.jpg'
+          }
+        ),
+        "AI"
+      ]
     )
   ]
 )

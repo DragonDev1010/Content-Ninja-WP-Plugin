@@ -18,7 +18,6 @@ require_once __DIR__.'/Includes/enqueue_styles.php';
 require_once __DIR__.'/Includes/enqueue_scripts.php';
 
 function sidebar_plugin_register() {
-
   wp_register_script(
       'ai-content-detector-panel-js',
       plugins_url( '/assets/js/sidebar-plugin/sidebar-components/ai-content-detector-panel.js', __FILE__ )

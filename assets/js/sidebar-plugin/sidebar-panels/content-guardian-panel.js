@@ -5,6 +5,10 @@ var PanelRow = wp.components.PanelRow
 var Button = wp.components.Button
 var Icon = wp.components.Icon
 
+var checkDate = 'Jun 06 2023 - 08:55 AM '
+var checker = 'Heeyoun Hong'
+var totalWords = 682
+
 var contentGuardianPanelRow = el(
   'div',
   null,
@@ -22,13 +26,13 @@ var contentGuardianPanelRow = el(
         el(
           'span',
           {className: 'roboto-7-12-17'},
-          "Jun 06 2023 - 08:55 AM "
+          checkDate
         ),
         "by ",
         el(
           'span',
           {className: 'roboto-7-12-17'},
-          "Heeyoun Hong"
+          checker
         )
       ]
     ),
@@ -42,7 +46,10 @@ var contentGuardianPanelRow = el(
       el(
         'p',
         {className: "primary-btn roboto-5-13-17"},
-        "Total words: 682"
+        [
+          "Total words: ",
+          totalWords
+        ]
       )
     ),
     el(

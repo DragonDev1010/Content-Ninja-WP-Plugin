@@ -20,35 +20,35 @@ require_once __DIR__.'/Includes/enqueue_scripts.php';
 function sidebar_plugin_register() {
   wp_register_script(
       'ai-content-detector-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/ai-content-detector-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/ai-content-detector-panel.js', __FILE__ )
   );
   wp_register_script(
       'originality-ai-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/originality-ai-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/originality-ai-panel.js', __FILE__ )
   );
   wp_register_script(
       'content-guardian-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/content-guardian-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/content-guardian-panel.js', __FILE__ )
   );
   wp_register_script(
       'copyleaks-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/copyleaks-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/copyleaks-panel.js', __FILE__ )
   );
   wp_register_script(
       'gpt-zero-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/gpt-zero-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/gpt-zero-panel.js', __FILE__ )
   );
   wp_register_script(
       'openai-chat-gpt-3.5-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/openai-chat-gpt-3.5-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/openai-chat-gpt-3.5-panel.js', __FILE__ )
   );
   wp_register_script(
       'openai-chat-gpt-4-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/openai-chat-gpt-4-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/openai-chat-gpt-4-panel.js', __FILE__ )
   );
   wp_register_script(
       'sapling-panel-js',
-      plugins_url( '/assets/js/sidebar-plugin/sidebar-components/sapling-panel.js', __FILE__ )
+      plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/sapling-panel.js', __FILE__ )
   );
   wp_register_script(
       'plugin-sidebar-js',

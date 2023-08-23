@@ -3,6 +3,7 @@ var Panel = wp.components.Panel
 var PanelBody = wp.components.PanelBody
 var PanelRow = wp.components.PanelRow
 var Button = wp.components.Button
+var Icon = wp.components.Icon
 
 var contentGuardianPanelRow = el(
   'div',
@@ -46,22 +47,148 @@ var contentGuardianPanelRow = el(
     ),
     el(
       'div',
-      {className: "primary-btn roboto-5-13-17"},
+      {
+        className: 'primary-btn',
+        style: {
+          width: '168px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-around'
+        }
+      },
+      [
+        el(
+          'div',
+          { style: {
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: 10
+          }},
+          [
+            el(
+              'img',
+              {
+                src: '/dino/wp-content/plugins/Content-Guardian/assets/images/ai-part-icon.png'
+              }
+            ),
+            "AI"
+          ]
+        ),
+        el(
+          'div',
+          {style: {
+            display: 'flex',
+            alignItems: 'center',
+            columnGap: 10
+          }},
+          [
+            el(
+              'img',
+              {
+                src: '/dino/wp-content/plugins/Content-Guardian/assets/images/human-part-icon.png'
+              }
+            ),
+            "Human"
+          ]
+        )
+      ]
+    ),
+    el(
+      'div',
+      {
+        style: {
+          padding: '16px 10px',
+          backgroundColor: 'rgba(216, 214, 229, 0.6)',
+          borderRadius: 7,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }
+      },
       [
         el(
           'img',
           {
-            src: '/images/ai-part-icon.png'
-          }
+            src: '/dino/wp-content/plugins/Content-Guardian/assets/images/pt-logo-small-black 2.png'
+          },
         ),
-        "AI",
+        el(
+          'p',
+          {},
+          [
+            el(
+              Icon,
+              {
+                icon: 'info'
+              },
+            ),
+            "What is ",
+            el(
+              'a',
+              {},
+              "Content Guardian Score?"
+            )
+          ]
+        ),
         el(
           'img',
           {
-            src: 'image.jpg'
+            src: '/dino/wp-content/plugins/Content-Guardian/assets/images/ai-probability-chart.png'
           }
         ),
-        "AI"
+        el(
+          'div',
+          {
+            style: {
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }
+          },
+          [
+            el(
+              'img',
+              {src: '/dino/wp-content/plugins/Content-Guardian/assets/images/bot-icon.png'},
+            ),
+            el(
+              'p',
+              {
+                style: {
+                  marginBottom: 0
+                }
+              },
+              "Number of sentences likely to be AI:"
+            )
+          ]
+        ),
+        el(
+          'p',
+          {
+            style: {
+              padding: '6px 10px',
+              backgroundColor: '#AC266B',
+              borderRadius: 7,
+              fontFamily: 'Roboto',
+              fontWeight: 800,
+              fontSize: 20,
+            }
+          },
+          "35"
+        ),
+        el(
+          Button,
+          {
+            style: {
+              border: '2px solid #AC266B',
+              borderRadius: 4,
+              padding: '6px 16px',
+              backgroundColor: 'transparent',
+              color: '#AC266B'
+            }
+          },
+          "Hightlighted AI Sentence"
+        )
       ]
     )
   ]
@@ -80,13 +207,6 @@ var contentGuardianPanel = el(
       PanelRow,
       null,
       contentGuardianPanelRow
-    ),
-    el(
-      Button,
-      {
-        variant: "primary"
-      },
-      "Hightlighted AI Sentence"
     )
   )
 )

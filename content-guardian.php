@@ -19,6 +19,10 @@ require_once __DIR__.'/Includes/enqueue_scripts.php';
 
 function sidebar_plugin_register() {
   wp_register_script(
+      'chart-min-js',
+      plugins_url( '/assets/js/chart/chart.min.js', __FILE__ )
+  );
+  wp_register_script(
       'ai-content-detector-panel-js',
       plugins_url( '/assets/js/sidebar-plugin/sidebar-panels/ai-content-detector-panel.js', __FILE__ )
   );
@@ -59,10 +63,15 @@ function sidebar_plugin_register() {
     'plugin-sidebar-css',
     plugins_url( '/assets/css/sidebar-plugin/plugin-sidebar.css', __FILE__ )
   );
+  wp_register_script(
+    'ai-probability-chart-js',
+    plugins_url( '/assets/js/sidebar-plugin/components/ai-probability-chart.js', __FILE__ ),
+);
 }
 add_action( 'init', 'sidebar_plugin_register' );
 
 function sidebar_plugin_script_enqueue() {
+  wp_enqueue_script( 'chart-min-js' );
   wp_enqueue_script( 'ai-content-detector-panel-js' );
   wp_enqueue_script( 'content-guardian-panel-js' );
   wp_enqueue_script( 'copyleaks-panel-js' );
@@ -72,6 +81,7 @@ function sidebar_plugin_script_enqueue() {
   wp_enqueue_script( 'originality-ai-panel-js' );
   wp_enqueue_script( 'sapling-panel-js' );
   wp_enqueue_script( 'plugin-sidebar-js' );
+  wp_enqueue_script( 'ai-probability-chart-js' );
   wp_enqueue_style( 'plugin-sidebar-css' );
 }
 add_action( 'enqueue_block_editor_assets', 'sidebar_plugin_script_enqueue' );
@@ -91,8 +101,3 @@ add_action('admin_menu', 'add_menu');
 
 // Add the submenus
 add_action('admin_menu', 'add_sub_menu');
-
-// function add_font_family() {
-//   wp_enqueue_style('google-roboto-fonts', plugin_dir_url(__FILE__).'/assets/roboto-font-family/Roboto-Black.ttf');
-// }
-// add_action('admin_enqueue_scripts', 'add_font_family');

@@ -8,6 +8,7 @@ var Icon = wp.components.Icon
 var checkDate = 'Jun 06 2023 - 08:55 AM '
 var checker = 'Heeyoun Hong'
 var totalWords = 682
+var amount_ai_sentences = 35
 
 var contentGuardianPanelRow = el(
   'div',
@@ -139,10 +140,48 @@ var contentGuardianPanelRow = el(
           ]
         ),
         el(
-          'img',
+          'div',
           {
-            src: '/dino/wp-content/plugins/Content-Guardian/assets/images/ai-probability-chart.png'
-          }
+            style: {
+              position: 'relative'
+            }
+          },
+          [
+            el(
+              'canvas',
+              {
+                id: 'ai-probability-chart',
+                style: {
+                  width: '100%'
+                }
+              }
+            ),
+            el(
+              'div',
+              {
+                style: {
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  margin: 0,
+                  textAlign: 'center',
+                }
+              },
+              [
+                el(
+                  'p',
+                  {},
+                  "25%"
+                ),
+                el(
+                  'p',
+                  {},
+                  "AI probability"
+                )
+              ]
+            )
+          ]
         ),
         el(
           'div',
@@ -179,9 +218,10 @@ var contentGuardianPanelRow = el(
               fontFamily: 'Roboto',
               fontWeight: 800,
               fontSize: 20,
+              color: 'white'
             }
           },
-          "35"
+          amount_ai_sentences
         ),
         el(
           Button,

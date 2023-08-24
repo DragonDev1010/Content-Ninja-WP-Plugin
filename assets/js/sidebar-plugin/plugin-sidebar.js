@@ -6,7 +6,7 @@
 
   var contentGuardianPluginIcon = el(
     "div",
-    null,
+    {id: 'content-guardian-plugin-icon'},
     el(
       "p",
       null,
@@ -56,5 +56,4 @@
           );
       },
   } );
-  
 } )( window.wp, contentGuardianPanel, originalityAiPanel, copyLeaksPanel, openAi_3_5_Panel );

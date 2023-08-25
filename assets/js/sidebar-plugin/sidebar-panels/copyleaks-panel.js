@@ -15,7 +15,13 @@ var copyLeaksPanel = el(
   el(
     PanelBody,
     {
-      title: "COPYLEAKS",
+      title: el(
+        'p',
+        {
+          className: 'roboto-7-13-17',
+        },
+        "COPYLEAKS"
+      ),
       initialOpen: false
     },
     el(

@@ -16,12 +16,19 @@ var contentGuardianPanelRow = el(
   [
     el(
       'p',
-      {className: 'roboto-7-13-17'},
+      {
+        className: 'roboto-7-13-17',
+        style: {
+          marginBottom: 10
+        }
+      },
       "Check Results"
     ),
     el(
       'p',
-      {className: 'roboto-4-12-17 color-757575'},
+      {
+        className: 'roboto-4-12-17 color-757575'
+      },
       [
         "Checked on ", 
         el(
@@ -46,7 +53,12 @@ var contentGuardianPanelRow = el(
       },
       el(
         'p',
-        {className: "primary-btn roboto-5-13-17"},
+        {
+          className: "primary-btn roboto-5-13-17",
+          style: {
+            marginBottom: 7
+          }
+        },
         [
           "Total words: ",
           totalWords
@@ -61,7 +73,8 @@ var contentGuardianPanelRow = el(
           width: '168px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-around'
+          justifyContent: 'space-around',
+          marginBottom: 10
         }
       },
       [
@@ -123,7 +136,13 @@ var contentGuardianPanelRow = el(
         ),
         el(
           'p',
-          {},
+          {
+            className: 'roboto-4-12-17',
+            style: {
+              display: 'flex',
+              alignItems: 'center'
+            }
+          },
           [
             el(
               Icon,
@@ -171,12 +190,16 @@ var contentGuardianPanelRow = el(
               [
                 el(
                   'p',
-                  {},
+                  {
+                    className: 'roboto-8-30-34'
+                  },
                   "25%"
                 ),
                 el(
                   'p',
-                  {},
+                  {
+                    className: 'roboto-5-12-16'
+                  },
                   "AI probability"
                 )
               ]
@@ -200,9 +223,7 @@ var contentGuardianPanelRow = el(
             el(
               'p',
               {
-                style: {
-                  marginBottom: 0
-                }
+                className: 'roboto-5-13-17'
               },
               "Number of sentences likely to be AI:"
             )
@@ -218,7 +239,8 @@ var contentGuardianPanelRow = el(
               fontFamily: 'Roboto',
               fontWeight: 800,
               fontSize: 20,
-              color: 'white'
+              color: 'white',
+              margin: '7px 0'
             }
           },
           amount_ai_sentences
@@ -234,7 +256,21 @@ var contentGuardianPanelRow = el(
               color: '#AC266B'
             }
           },
-          "Hightlighted AI Sentence"
+          el(
+            'div',
+            {
+              className: 'roboto-7-13-17'
+            },
+            [
+              el(
+                Icon,
+                {
+                  icon: 'saved'
+                },
+              ),
+              "Hightlighted AI Sentence"
+            ]
+          )
         )
       ]
     )
@@ -247,7 +283,31 @@ var contentGuardianPanel = el(
   el(
     PanelBody,
     {
-      title: "Content Guardian",
+      title: el(
+        'div',
+        {
+          className: 'roboto-7-13-17',
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            columnGap: 10
+          }
+        },
+        [
+          el(
+            'img',
+            {src: '/dino/wp-content/plugins/Content-Guardian/assets/images/cg-logo.png'}
+          ),
+          el(
+            'p',
+            {
+              className: 'roboto-7-13-17',
+            },
+            "Content Guardian"
+          )
+        ]
+      ),
       initialOpen: true
     },
     el(

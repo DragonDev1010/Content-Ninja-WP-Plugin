@@ -18,9 +18,7 @@ var sapling_Panel = el(
       title: el(
         'p',
         {
-          style: {
-            color: 'red'
-          }
+          className: 'roboto-7-13-17'
         },
         'Sapling'
       ),

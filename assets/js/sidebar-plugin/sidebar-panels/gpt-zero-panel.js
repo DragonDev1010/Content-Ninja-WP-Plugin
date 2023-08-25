@@ -16,13 +16,33 @@ var gpt_zero_Panel = el(
     PanelBody,
     {
       title: el(
-        'p',
+        'div',
         {
+          className: 'roboto-7-13-17',
           style: {
-            color: 'red'
+            display: 'flex'
           }
         },
-        'GPT Zero'
+        [
+          el(
+            'p',
+            {
+              style: {
+                color: '#999999'
+              }
+            },
+            "GPT"
+          ),
+          el(
+            'p',
+            {
+              style: {
+                color: '#50a0ff'
+              }
+            },
+            "Zero"
+          )
+        ]
       ),
       initialOpen: false
     },

@@ -18,8 +18,11 @@ var ai_content_detector_Panel = el(
       title: el(
         'p',
         {
+          className: 'roboto-7-13-17',
           style: {
-            color: 'red'
+            color: 'white',
+            background: 'black',
+            padding: 5
           }
         },
         'AI Content Detector'

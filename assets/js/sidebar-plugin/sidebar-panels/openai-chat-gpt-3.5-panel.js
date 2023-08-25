@@ -16,7 +16,35 @@ var openAi_3_5_Panel = el(
   el(
     PanelBody,
     {
-      title: "OpenAI ChatGPT 3.5",
+      title: el(
+        'div',
+        {
+          className: 'roboto-7-13-17',
+          style: {
+            display: 'flex',
+            columnGap: 5
+          }
+        },
+        [
+          el(
+            'p',
+            {
+              style: {}
+            },
+            "OpenAI"
+          ),
+          el(
+            'p',
+            {
+              style: {
+                color: 'white',
+                background: 'black'
+              }
+            },
+            "ChatGPT 3.5"
+          )
+        ]
+      ),
       initialOpen: false
     },
     el(

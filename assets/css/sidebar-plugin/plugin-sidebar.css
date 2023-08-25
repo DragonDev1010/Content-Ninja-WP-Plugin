@@ -2,6 +2,9 @@
   font-family: 'Roboto';
   src: url('../../roboto-font-family/Roboto-Regular.ttf') format('ttf')
 }
+p {
+  margin: 0px;
+}
 .color-1e1e1e {
   color: #1e1e1e;
 }

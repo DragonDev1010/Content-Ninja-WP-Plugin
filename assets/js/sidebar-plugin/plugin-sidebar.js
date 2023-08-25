@@ -1,4 +1,13 @@
-( function ( wp, contentGuardianPanel, originalityAiPanel, copyLeaksPanel, openAi_3_5_Panel) {
+( function ( 
+    wp, 
+    contentGuardianPanel, 
+    originalityAiPanel, 
+    copyLeaksPanel, 
+    openAi_3_5_Panel, 
+    openAi_4_Panel, 
+    sapling_Panel, 
+    gpt_zero_Panel
+  ) {
   var registerPlugin = wp.plugins.registerPlugin;
   var PluginSidebar = wp.editPost.PluginSidebar;
   var el = wp.element.createElement;
@@ -38,7 +47,10 @@
         originalityAiPanel, 
         copyLeaksPanel, 
         openAi_3_5_Panel, 
-        openAi_4_Panel
+        openAi_4_Panel,
+        sapling_Panel,
+        ai_content_detector_Panel,
+        gpt_zero_Panel
       ]
     })
   )
@@ -56,4 +68,13 @@
           );
       },
   } );
-} )( window.wp, contentGuardianPanel, originalityAiPanel, copyLeaksPanel, openAi_3_5_Panel );
+} )( 
+  window.wp, 
+  contentGuardianPanel, 
+  originalityAiPanel, 
+  copyLeaksPanel, 
+  openAi_3_5_Panel, 
+  openAi_4_Panel, 
+  sapling_Panel, 
+  gpt_zero_Panel 
+);

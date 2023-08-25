@@ -19,7 +19,7 @@ window.onload = function test() {
           cutout: 90 // define the thickness of arc
         }
       });
-    }, 2500);
+    }, 5000);
     
   })
 }

@@ -131,7 +131,10 @@ var contentGuardianPanelRow = el(
         el(
           'img',
           {
-            src: '/dino/wp-content/plugins/Content-Guardian/assets/images/pt-logo-small-black 2.png'
+            src: '/dino/wp-content/plugins/Content-Guardian/assets/images/pt-logo-small-black 2.png',
+            style: {
+              marginBottom: 7
+            }
           },
         ),
         el(
